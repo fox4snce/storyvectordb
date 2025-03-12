@@ -1,25 +1,39 @@
 # SQLite VectorDB
 
-A lightweight, single-file vector database implementation using SQLite as the underlying storage engine. This library provides vector-based search and retrieval functionality without requiring external vector database dependencies.
+A dirt-simple, single-file vector database implementation using SQLite. This library provides powerful vector-based search functionality with minimal dependencies - just numpy!
+
+## Why SQLite VectorDB?
+
+- **Ultra-lightweight**: Single Python file, single dependency (numpy)
+- **Zero setup**: No servers, no cloud, no API keys - just import and use
+- **Surprisingly powerful**: Efficient similarity search, context retrieval, batch operations
+- **Fully local**: All data stays on your machine
+- **Blazing fast**: Built on SQLite, one of the most battle-tested databases in the world
+- **Actually simple**: ~300 lines of clean, documented code you can understand
 
 ## Features
 
 - Self-contained implementation in a single Python file
 - SQLite-based storage for both vectors and metadata
 - Efficient similarity search using cosine similarity
+- Context retrieval for surrounding chunks
+- Batch operations for better performance
+- Progress tracking for long operations
 - File origin tracking for easy updates and deletions
 - Metadata filtering support
+- Database statistics and monitoring
 - No external vector database dependencies
 
 ## Installation
 
-1. Clone this repository:
+Just copy `sqlite_vectordb.py` to your project and install numpy:
+
 ```bash
-git clone <repository-url>
-cd sqlite-vectordb
+pip install numpy
 ```
 
-2. Install the required dependencies:
+Or use the requirements.txt:
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -59,27 +73,46 @@ for result in results:
 db.delete_by_file("doc1.txt")
 ```
 
-### Search with Metadata Filters
+### Batch Operations
 
 ```python
-# Search with metadata filters
-results = db.search(
-    query_vector=query_vector,
-    top_n=5,
-    filters={"category": "test"}
-)
+# Insert multiple items at once
+items = [
+    {
+        'content': "First document",
+        'vector': [0.1, 0.2, 0.3, 0.4],
+        'metadata': {'category': 'docs', 'chunk_index': 0},
+        'file_id': 'doc1.txt'
+    },
+    {
+        'content': "Second document",
+        'vector': [0.2, 0.3, 0.4, 0.5],
+        'metadata': {'category': 'docs', 'chunk_index': 1},
+        'file_id': 'doc1.txt'
+    }
+]
+ids = db.insert_batch(items)
 ```
 
-### List All Entries
+### Get Context Around Results
 
 ```python
-# Get all stored vectors
-all_entries = db.list_all()
-for entry in all_entries:
-    print(f"ID: {entry['id']}")
-    print(f"Content: {entry['content']}")
-    print(f"File ID: {entry['file_id']}")
+# Get surrounding chunks for better context
+context = db.get_context(chunk_id=42, window_size=2)
+for chunk in context:
+    print(f"Chunk ID: {chunk['id']}")
+    print(f"Content: {chunk['content']}")
     print("---")
+```
+
+### Database Statistics
+
+```python
+# Get database statistics
+stats = db.get_stats()
+print(f"Total vectors: {stats['total_vectors']}")
+print(f"Unique files: {stats['unique_files']}")
+print(f"Chunks per file: {stats['per_file_chunks']}")
 ```
 
 ## Implementation Details
@@ -95,7 +128,8 @@ for entry in all_entries:
 - Uses SQLite indexing for fast metadata filtering
 - Cosine similarity is computed efficiently using numpy
 - JSON storage provides flexibility without unnecessary complexity
-- Suitable for small to medium-sized vector collections
+- Suitable for small to medium-sized vector collections (millions of vectors)
+- No network overhead - everything runs locally
 
 ## License
 
