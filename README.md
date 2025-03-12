@@ -133,7 +133,7 @@ print(f"Chunks per file: {stats['per_file_chunks']}")
 
 ## License
 
-MIT License
+MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 

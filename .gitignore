@@ -55,3 +55,4 @@ test_*.py
 !README.md
 !requirements.txt
 !sqlite_vectordb.py
+!LICENSE
