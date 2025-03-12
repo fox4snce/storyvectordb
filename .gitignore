@@ -45,3 +45,12 @@ files/
 .DS_Store
 .env
 .env.* 
+
+# Test files
+test_*.py
+*_test.py
+
+# Only include these files
+!README.md
+!requirements.txt
+!sqlite_vectordb.py
