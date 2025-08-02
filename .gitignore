@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# SQLite databases
+*.db
+
+# PDF and document files
+files/
+*.pdf
+*.docx
+*.xlsx
+*.pptx
+
+# Misc
+.DS_Store
+.env
+.env.* 
+outline.txt
+blog-post-template.md
+
+# Test files
+test_*.py
+*_test.py
+benchmarks/benchmark_small.py
+
+# Only include these files
+!README.md
+!requirements.txt
+!src/sqlite_vectordb.py
+!LICENSE
+!Makefile
+!benchmarks/benchmark_sqlite.py
