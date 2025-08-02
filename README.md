@@ -1,73 +1,54 @@
-# Jeff — Rapid AI Validation Engineer [![Bench](https://img.shields.io/badge/bench-pass-brightgreen)](benchmarks/results.csv)
-*Ex-systems engineer · 15+ prototypes shipped*
+# Jeff — Rapid AI Validation Engineer  [![Bench](https://img.shields.io/badge/bench-pass-brightgreen)](benchmarks/results.csv)
 
-**I turn a "Could we just…?" AI idea into go / pivot / drop data in 72 hours.**
+I turn a **“Could we just…?”** AI idea into **go / pivot / drop data** in 72 hours.
 
 ---
 
 ### Recent client question  
-> "Could SQLite replace FAISS for our early-stage vector search?"
+> “Could SQLite replace FAISS for our early-stage vector search?”
 
-I built this repo in two days, ran the numbers, and the answer was: **yes up to ~200 k vectors; switch to FAISS for sub-100 ms at million scale.**
+I built this repo in two days, ran the numbers, and the answer was:
 
-### Micro-benchmark (CPU-only, i7-14700KF)
+*Yes for ≤ 200 k vectors; move to FAISS / pgvector for sub-100 ms at million-scale.*
 
-| Vectors | Insert&nbsp;(s) | SQL&nbsp;query&nbsp;(ms) | Fast (NumPy) ms |
-|---------|---------------:|------------------------:|----------------:|
+---
+
+### Micro-benchmark  (CPU-only • i7-14700KF)
+
+| Vectors | Insert (s) | SQL query (ms) | Fast NumPy (ms) |
+|--------:|-----------:|--------------:|----------------:|
 | 1 000   | 0.13 | 270 | **80** |
 | 10 000  | 1.43 | 2 940 | **875** |
 | 100 000 | 16.3 | 29 456 | **9 447** |
 
-*Fast method = thin NumPy loop, no SQL UDF.*
+*Fast method = thin NumPy loop (no SQL UDF).*
 
 **Key findings**
 
-- ✅ SQLite fine for < 200 k vectors or batch look-ups  
-- ✅ Thin-loop optimisation → 3-4 × speed-up  
-- ⚠️ Plan migration to FAISS / pgvector for ≥ 1 M vectors or < 100 ms latency
+- ✅ SQLite is fine for prototypes & KBs < 200 k vectors  
+- ✅ Thin-loop optimisation → 3-4 × speed-up on CPU  
+- ⚠️ Plan FAISS / pgvector for ≥ 1 M vectors **or** < 100 ms latency
 
 ---
 
 ## Fixed-price feasibility sprint — US $2 500 — 3 business days
 
-You get:  
+**You get**
 
 - 🛠️ working prototype & code  
 - 📊 benchmark CSV + plots  
 - 📝 3-page go / pivot / drop memo  
-- 30-min Q&A call (optional)
+- Optional 30-min Q&A call  
 
-**Email me:** [caldwelljeffreyd@gmail.com](mailto:caldwelljeffreyd@gmail.com) (reply < 24 h, Pacific)
+*I reply to enquiries within 24 h (Pacific).*  
+**Email:** <mailto:caldwelljeffreyd@gmail.com>
 
 ---
 
-Copy-paste to run the demo:
+### Quick demo
+
 ```bash
 git clone https://github.com/fox4snce/storyvectordb
 cd storyvectordb
 pip install numpy
 python benchmarks/benchmark_sqlite.py
-```
-
----
-
-## Implementation Details
-
-- **Single Python script** (`src/sqlite_vectordb.py`)
-- **One dependency** (`numpy`)
-- **Zero setup** — just SQLite
-- **Fully local** — no API keys or cloud services
-- **Fast enough for 100 k vectors on laptop CPU** — optimized with SQLite PRAGMAs
-- **Actually simple** — 300 lines of readable code
-
-Features: CRUD operations, batch inserts, metadata filtering, context windows, database statistics.
-
----
-
-## Need a Similar Reality Check?
-
-**Fixed-price feasibility sprint:** $2,500 — 3 business days
-
-**Email:** [caldwelljeffreyd@gmail.com](mailto:caldwelljeffreyd@gmail.com)
-
-*This repo is proof I can rapidly validate your AI ideas. The code is just an example of my process in action.*
