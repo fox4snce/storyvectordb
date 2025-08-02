@@ -1,6 +1,6 @@
 # Jeff — Rapid AI Validation Engineer  [![Bench](https://img.shields.io/badge/bench-pass-brightgreen)](benchmarks/results.csv)
 
-I turn a **“Could we just…?”** AI idea into **go / pivot / drop data** in 72 hours.
+I turn a **“Could we just…?”** AI idea into **go / pivot / drop** data in 72 hours.
 
 ---
 
