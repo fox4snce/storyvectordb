@@ -37,7 +37,7 @@ You get:
 - 🛠️ working prototype & code  
 - 📊 benchmark CSV + plots  
 - 📝 3-page go / pivot / drop memo  
-- 30-min Q&A call (optional)
+- 📬 async Q&A support (email or Slack)
 
 **Email me:** [caldwelljeffreyd@gmail.com](mailto:caldwelljeffreyd@gmail.com) (reply < 24 h, Pacific)
 
