@@ -47,8 +47,18 @@ I built this repo in two days, ran the numbers, and the answer was:
 
 ### Quick demo
 
-```bash
+bash```
 git clone https://github.com/fox4snce/storyvectordb
 cd storyvectordb
 pip install numpy
 python benchmarks/benchmark_sqlite.py
+```
+
+This repo isn't a product—it's proof I can turn an AI idea into hard numbers in three days.
+
+## Implementation details
+
+- Single Python file (`src/sqlite_vectordb.py`) + NumPy
+- Pure SQLite (no external services, no API keys)  
+- PRAGMA-tuned; fast enough for 100k-vector look-ups on laptop CPU
+- Features: CRUD, batch insert, metadata filter, context window, DB stats
