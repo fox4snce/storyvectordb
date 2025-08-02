@@ -64,14 +64,4 @@ python benchmarks/benchmark_sqlite.py
 
 Features: CRUD operations, batch inserts, metadata filtering, context windows, database statistics.
 
----
-
-## Need a Similar Reality Check?
-
-**Fixed-price feasibility sprint:** $2,500 — 3 business days
-
-**Email:** [caldwelljeffreyd@gmail.com](mailto:caldwelljeffreyd@gmail.com)
-
-*This repo is proof I can rapidly validate your AI ideas. The code is just an example of my process in action.*
-
 **License:** MIT
