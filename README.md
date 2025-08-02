@@ -1,6 +1,6 @@
 # Jeff — Rapid AI Validation Engineer  [![Bench](https://img.shields.io/badge/bench-pass-brightgreen)](benchmarks/results.csv)
 
-I turn a **“Could we just…?”** AI idea into **go / pivot / drop** data in 72 hours.
+I turn a **“Could we just…?”** AI idea into **go / pivot / drop data** in 72 hours.
 
 ---
 
@@ -15,9 +15,9 @@ I built this repo in two days, ran the numbers, and the answer was:
 
 ### Micro-benchmark  (CPU-only • i7-14700KF)
 
-| Vectors | Insert (s) | SQL query (ms) | Fast NumPy (ms) |
-|--------:|-----------:|--------------:|----------------:|
-| 1 000   | 0.13 | 270 | **80** |
+| Vectors | Insert&nbsp;(s) | SQL&nbsp;query&nbsp;(ms) | Fast&nbsp;NumPy&nbsp;(ms) |
+|--------:|---------------:|-------------------------:|-------------------------:|
+| 1 000   | 0.13 | 270   | **80** |
 | 10 000  | 1.43 | 2 940 | **875** |
 | 100 000 | 16.3 | 29 456 | **9 447** |
 
@@ -31,14 +31,14 @@ I built this repo in two days, ran the numbers, and the answer was:
 
 ---
 
-## Fixed-price feasibility sprint — US $2 500 — 3 business days
+## Fixed-price feasibility sprint — **US $2 500 — 3 business days**
 
 **You get**
 
 - 🛠️ working prototype & code  
 - 📊 benchmark CSV + plots  
 - 📝 3-page go / pivot / drop memo  
-- Optional 30-min Q&A call  
+- 📬 async Q&A support (email or Slack)  
 
 *I reply to enquiries within 24 h (Pacific).*  
 **Email:** <mailto:caldwelljeffreyd@gmail.com>
