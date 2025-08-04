@@ -39,7 +39,7 @@ You get:
 - 📝 3-page go / pivot / drop memo  
 - 📬 async Q&A support (email or Slack)
 
-**Email me:** [caldwelljeffreyd@gmail.com](mailto:caldwelljeffreyd@gmail.com) (reply < 24 h, Pacific)
+**Email me:** [j.caldwell@simplychaos.org](mailto:j.caldwell@simplychaos.org) (reply < 24 h, Pacific)
 
 ---
 
